@@ -172,7 +172,7 @@ def store_quanitity_column_type_result(TS_name,arg1):
         json.dump(Q,f)
     
 if __name__=="__main__":
-    
-    for r in ['0.1','0.2','0.3','0.4','0.5']:
-        store_quantity_candidate('T2DC','null_'+r)
-        store_quanitity_column_type_result('T2DC','null_'+r)
+
+    TS_name='SemTab'
+    store_quantity_candidate(TS_name)
+    store_quanitity_column_type_result(TS_name)
