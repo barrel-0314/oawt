@@ -244,7 +244,7 @@ def refine_qtype(TS_name,arg1,model,tokenizer):
             for qcol in R['bia'][i]:
                 if not(R['bia'][i][qcol]) and not (R['non'][i][qcol]):
                     n+=1
-        print(n)
+        #print(n)
     return R
         
 if __name__=="__main__":
@@ -252,10 +252,7 @@ if __name__=="__main__":
     model=BertModel.from_pretrained("bert-base-uncased")
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     
-    TS=['SemTab','T2D','wiki','T2DC']
-    
-    for TS_name in TS[1:-1]:
-        #TS_name='T2DC'
-        arg1=None
-        R=refine_qtype(TS_name,arg1,model,tokenizer)
+    TS_name='SemTab'
+    arg1=None
+    R=refine_qtype(TS_name,arg1,model,tokenizer)
     
