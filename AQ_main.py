@@ -238,23 +238,8 @@ def Aggregate_Query(TS_name,Pro,error,I):
 
 if __name__=="__main__":
     
-    TS=['SemTab','T2D','wiki','T2DC','TUS','TGPT']
+    TS_name='SemTab'
+    error=0.05
+    a=0.95
+    R=Aggregate_Query(TS_name,a,error,20)
     
-    for TS_name in TS[5:6]:
-        R=Aggregate_Query(TS_name,0.95,0.05,20)
-    
-    '''
-    E={}
-    #error=[0.1,0.15,0.2,0.25]
-    #error=[0.15]
-    Pro=[0.9]
-    #Pro=[0.95]
-    
-    for TS_name in TS[0:1]:
-        E[TS_name]={}
-        #for e in error:
-        for e in Pro:
-            #_,E[TS_name][e]=Aggregate_Query(TS_name,0.95,e,100)
-            _,E[TS_name][e]=Aggregate_Query(TS_name,e,0.05,100)
-    #p=1-236/253
-    '''
