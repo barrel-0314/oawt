@@ -147,18 +147,18 @@ def refine_qtype(TS_name,arg1,model,tokenizer):
     elif 'null' in arg1:
         
         r=arg1.split('_')[-1]
-        table_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Data/'
+        table_dir='Data/'+'null_table/Rate_'+r+'/Data/'
         res_dir='../Llama/TableLlama-main/output_data/'+'noise/'+TS_name+'_res_'+r+'.json'
-        bia_dir='处理后/处理后/noise_table/Rate_'+r+'/Biased/'
-        #res_dir='../../aggregate/处理后/处理后/'+'null_table/Rate_'+r+'/Result/'
+        bia_dir='Data/noise_table/Rate_'+r+'/Biased/'
+        #res_dir='../../aggregate/Data/'+'null_table/Rate_'+r+'/Result/'
         
     else:
         
         r=arg1.split('_')[-1]
-        table_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Data/'
+        table_dir='Data/'+'sample_table/Num_'+r+'/Data/'
         res_dir='../Llama/TableLlama-main/output_data/'+'sample/'+TS_name+'_res_'+r+'.json'
-        bia_dir='处理后/处理后/sample_table/Num_'+r+'/Biased/'
-        #res_dir='../../aggregate/处理后/处理后/'+'sample_table/Num_'+r+'/Result/'
+        bia_dir='Data/sample_table/Num_'+r+'/Biased/'
+        #res_dir='../../aggregate/Data/'+'sample_table/Num_'+r+'/Result/'
         
     os.makedirs(bia_dir,exist_ok=True)
 
