@@ -57,11 +57,11 @@ def jaccard_similarity(str1, str2):
     set1 = set(str1.upper())
     set2 = set(str2.upper())
     
-    # 计算两个集合的并集和交集大小
+    
     union_size = len(set1 | set2)
     intersection_size = len(set1 & set2)
     
-    # 计算Jaccard相似度
+    
     if union_size == 0:
         return 0.0
     else:
@@ -632,15 +632,15 @@ def store_first_candidate(TS_name,arg1=None):
     elif 'null' in arg1:
         
         r=arg1.split('_')[-1]
-        table_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Data/'
-        can_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Candidate/'
+        table_dir='Data/'+'null_table/Rate_'+r+'/Data/'
+        can_dir='Data/'+'null_table/Rate_'+r+'/Candidate/'
         with open('Candidate/'+TS_name+'_fcs.json','r',encoding='utf-8') as file:
             OC=json.load(file)
     else:
         
         r=arg1.split('_')[-1]
-        table_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Data/'
-        can_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Candidate/'
+        table_dir='Data/'+'sample_table/Num_'+r+'/Data/'
+        can_dir='Data/'+'sample_table/Num_'+r+'/Candidate/'
         
     os.makedirs(table_dir,exist_ok=True)
     os.makedirs(can_dir,exist_ok=True)
@@ -655,7 +655,7 @@ def store_first_candidate(TS_name,arg1=None):
     QT=pickle.load(f)
     f.close()
     #can_set_dir='Candidate/'
-    #fil_can_dir='处理后/处理后/filter_candidate/'
+    #fil_can_dir='Data/filter_candidate/'
     model=BertModel.from_pretrained("bert-base-uncased")
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     try:
@@ -737,11 +737,11 @@ def read_candidate(WT,wt_name,arg1=None):
     
 
     if arg1==None:
-        fil_can_dir='处理后/处理后/filter_candidate/'
+        fil_can_dir='Data/filter_candidate/'
     else:
         fil_can_dir=arg1
         os.makedirs(fil_can_dir,exist_ok=True)
-    #fil_can_dir='处理后/处理后/filter_candidate/'
+    #fil_can_dir='Data/filter_candidate/'
     f=open(fil_can_dir+wt_name+'_NCS.txt','r',encoding='utf-8')
     NCS={}
     for l in f.readlines():
