@@ -98,7 +98,7 @@ class BTree:
         parent.children.insert(index + 1, r_node)
         return self._split(parent)
  
-    def stepCover(self, node:Node, value_pos):     # value_pos表示删除的value所在的位置
+    def stepCover(self, node:Node, value_pos):     
         if node.children == []:
             return self.merge(node, node.getPos())
  
