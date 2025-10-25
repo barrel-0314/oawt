@@ -424,7 +424,7 @@ def add_quantity_candidate(NCS,ctfq,yd,WT,td,wd):
 
 def read_candidate_filter(WT,fil_can_dir):
     
-    #fil_can_dir='处理后/处理后/graph_candidate/'
+    #fil_can_dir='Data/graph_candidate/'
     f=open(fil_can_dir+WT['id']+'_NCS.txt','r',encoding='utf-8')
     NCS={}
     for l in f.readlines():
@@ -474,17 +474,17 @@ def store_quantity_candidate(TS_name,arg1):
         if 'null' in arg1:
             #print(args)
             r=arg1.split('_')[-1]
-            table_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Data/'
-            can_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Candidate/'
-            col_type_dir='处理后/处理后/'+'null_table/Rate_'+r+'/ColumnType/'
-            bert_dir='处理后/处理后/'+'null_table/Rate_'+r+'/BERT/'
+            table_dir='Data/'+'null_table/Rate_'+r+'/Data/'
+            can_dir='Data/'+'null_table/Rate_'+r+'/Candidate/'
+            col_type_dir='Data/'+'null_table/Rate_'+r+'/ColumnType/'
+            bert_dir='Data/'+'null_table/Rate_'+r+'/BERT/'
         else:
             #print(args)
             r=arg1.split('_')[-1]
-            table_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Data/'
-            can_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Candidate/'
-            col_type_dir='处理后/处理后/'+'sample_table/Num_'+r+'/ColumnType/'
-            bert_dir='处理后/处理后/'+'sample_table/Num_'+r+'/BERT/'
+            table_dir='Data/'+'sample_table/Num_'+r+'/Data/'
+            can_dir='Data/'+'sample_table/Num_'+r+'/Candidate/'
+            col_type_dir='Data/'+'sample_table/Num_'+r+'/ColumnType/'
+            bert_dir='Data/'+'sample_table/Num_'+r+'/BERT/'
             
     with open(table_dir+TS_name+'_table.json','r',encoding='utf-8') as file:
         TableSet=json.load(file)
