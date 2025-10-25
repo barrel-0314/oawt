@@ -53,7 +53,7 @@ def table_main(Match,K,TS_name,query,lex,rough_flag,sample_tuple,SR_total,table_
         '''
         Match[t]=match_column_refine(Match[t], K)
         #print(Match)
-        C=list(csv.reader(open('处理后/处理后/处理后数据集/'+TS_name+'/'+t+'.csv','r',encoding='utf-8')))
+        C=list(csv.reader(open('Data/'+TS_name+'/'+t+'.csv','r',encoding='utf-8')))
         H=C[0]
         content=C[1:]
         if t not in table_row:
@@ -106,7 +106,7 @@ def sample_table_main(Match,K,TS_name,query,lex,rough_flag,sample_tuple,SR_total
                 continue
             Match[t]=match_column_refine(Match[t], K)
             #print(Match)
-            C=list(csv.reader(open('处理后/处理后/处理后数据集/'+TS_name+'/'+t+'.csv','r',encoding='utf-8')))
+            C=list(csv.reader(open('Data/'+TS_name+'/'+t+'.csv','r',encoding='utf-8')))
             H=C[0]
             content=C[1:]
             con_sam=[row for row in content if row not in sample_tuple]
