@@ -159,9 +159,9 @@ def store_ctf_bert(TableSet,arg1=None):
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     Fail=[]
     if arg1==None:
-        ctf_dir='处理后/处理后/column_type/'
+        ctf_dir='Data/column_type/'
     else:
-        ctf_dir='处理后/处理后/'+arg1
+        ctf_dir='Data/'+arg1
         
     
     bert_dir=ctf_dir
@@ -269,7 +269,7 @@ def row_bert_score(WT,model,tokenizer):
             
             if c!=WT['col_num']-1:
                 s=s+' '
-        # 对句子进行分词并编码
+    
         tokens = tokenizer.tokenize(s)
         inputs = tokenizer(s, return_tensors='pt', padding=True, truncation=True)
 
@@ -288,7 +288,7 @@ def row_bert_score(WT,model,tokenizer):
             else:
                 mention=WT['con'][r][int(c)]
             
-            # 分词子字符串
+            
             
             substring_tokens = tokenizer.tokenize(mention)
             substring_indices = [tokens.index(token) for token in substring_tokens if token in tokens]
@@ -297,10 +297,10 @@ def row_bert_score(WT,model,tokenizer):
                 #print('y')
                 average_vector=torch.zeros((1,768))
                 #print(substring_vectors.size()[0],r,substring_vectors.dim())
-                # 计算所有相关token向量的平均值
+                
             else:
                 average_vector = torch.mean(substring_vectors, dim=0)
-            # 打印平均向量
+            
             SEW=average_vector.detach().numpy()
             #print(SEW[0])
         
@@ -321,12 +321,12 @@ def store_row_bert_score(TS_name,arg):
     else:
         if 'null' in arg:
             r=arg.split('_')[-1]
-            table_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Data/'
-            bert_dir='处理后/处理后/'+'null_table/Rate_'+r+'/BERT/'
+            table_dir='Data/'+'null_table/Rate_'+r+'/Data/'
+            bert_dir='Data/'+'null_table/Rate_'+r+'/BERT/'
         if 'sample' in arg:
             r=arg.split('_')[-1]
-            table_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Data/'
-            bert_dir='处理后/处理后/'+'sample_table/Num_'+r+'/BERT/'
+            table_dir='Data/'+'sample_table/Num_'+r+'/Data/'
+            bert_dir='Data/'+'sample_table/Num_'+r+'/BERT/'
             
     with open(table_dir+TS_name+'_table.json','r',encoding='utf-8') as file:
         TableSet=json.load(file)
@@ -366,7 +366,7 @@ def store_row_bert_score(TS_name,arg):
     
 def header_bert_score(WT,model,tokenizer,db_name):
     
-    #H=list(csv.reader(open('处理后/处理后/处理后数据集/'+db_name+'/'+WT.name+'.csv','r',encoding='utf-8')))
+    #H=list(csv.reader(open('Data/'+db_name+'/'+WT.name+'.csv','r',encoding='utf-8')))
     H=WT['header']
     B={}    
     for c in WT['qcol']:
