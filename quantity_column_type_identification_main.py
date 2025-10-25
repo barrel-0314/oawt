@@ -104,19 +104,19 @@ def store_quanitity_column_type_result(TS_name,arg1):
         if 'null' in arg1:
             #print(args)
             r=arg1.split('_')[-1]
-            table_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Data/'
-            can_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Candidate/'
-            col_type_dir='处理后/处理后/'+'null_table/Rate_'+r+'/ColumnType/'
-            bert_dir='处理后/处理后/'+'null_table/Rate_'+r+'/BERT/'
-            res_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Result/'
+            table_dir='Data/'+'null_table/Rate_'+r+'/Data/'
+            can_dir='Data/'+'null_table/Rate_'+r+'/Candidate/'
+            col_type_dir='Data/'+'null_table/Rate_'+r+'/ColumnType/'
+            bert_dir='Data/'+'null_table/Rate_'+r+'/BERT/'
+            res_dir='Data/'+'null_table/Rate_'+r+'/Result/'
         else:
             #print(args)
             r=arg1.split('_')[-1]
-            table_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Data/'
-            can_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Candidate/'
-            col_type_dir='处理后/处理后/'+'sample_table/Num_'+r+'/ColumnType/'
-            bert_dir='处理后/处理后/'+'sample_table/Num_'+r+'/BERT/'
-            res_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Result/'
+            table_dir='Data/'+'sample_table/Num_'+r+'/Data/'
+            can_dir='Data/'+'sample_table/Num_'+r+'/Candidate/'
+            col_type_dir='Data/'+'sample_table/Num_'+r+'/ColumnType/'
+            bert_dir='Data/'+'sample_table/Num_'+r+'/BERT/'
+            res_dir='Data/'+'sample_table/Num_'+r+'/Result/'
     with open(table_dir+TS_name+'_table.json','r',encoding='utf-8') as file:
         TableSet=json.load(file)
     with open(can_dir+TS_name+'_pcan.json','r',encoding='utf-8') as file:
