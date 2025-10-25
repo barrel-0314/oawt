@@ -28,11 +28,11 @@ def jaccard_similarity_type(t1, t2):
     
     set1=set(t1)
     set2=set(t2)
-    # 计算两个集合的并集和交集大小
+    
     union_size = len(set1 | set2)
     intersection_size = len(set1 & set2)
     
-    # 计算Jaccard相似度
+    
     if union_size == 0:
         return 0.0
     else:
@@ -331,15 +331,15 @@ def store_column_type_candidate(TS_name,recommend,arg1=None):
         if 'null' in arg1:
             #print(args)
             r=arg1.split('_')[-1]
-            col_type_dir='处理后/处理后/'+'null_table/Rate_'+r+'/column_type/'
+            col_type_dir='Data/'+'null_table/Rate_'+r+'/column_type/'
             os.makedirs(col_type_dir,exist_ok=True)
-            con_dir='处理后/处理后/'+'null_table/Rate_'+r+'/table_content/'
+            con_dir='Data/'+'null_table/Rate_'+r+'/table_content/'
             TableSet=read_new_tableset(TableSet, con_dir)
         else:
             r=arg1.split('_')[-1]
-            col_type_dir='处理后/处理后/'+'sample_table/Num_'+r+'/column_type/'
+            col_type_dir='Data/'+'sample_table/Num_'+r+'/column_type/'
             os.makedirs(col_type_dir,exist_ok=True)
-            con_dir='处理后/处理后/'+'sample_table/Num_'+r+'/table_content/'
+            con_dir='Data/'+'sample_table/Num_'+r+'/table_content/'
             TableSet=read_new_tableset(TableSet, con_dir)
     if recommend==False:
         #Fail=[]
@@ -409,16 +409,16 @@ def store_column_type(TS_name,arg1=None):
         if 'null' in arg1:
             #print(args)
             r=arg1.split('_')[-1]
-            table_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Data/'
-            can_dir='处理后/处理后/'+'null_table/Rate_'+r+'/Candidate/'
-            col_type_dir='处理后/处理后/'+'null_table/Rate_'+r+'/ColumnType/'
-            #con_dir='处理后/处理后/'+'null_table/Rate_'+r+'/table_content/'
+            table_dir='Data/'+'null_table/Rate_'+r+'/Data/'
+            can_dir='Data/'+'null_table/Rate_'+r+'/Candidate/'
+            col_type_dir='Data/'+'null_table/Rate_'+r+'/ColumnType/'
+            #con_dir='Data/'+'null_table/Rate_'+r+'/table_content/'
             #TableSet=read_new_tableset(TS_name, con_dir)
         else:
             r=arg1.split('_')[-1]
-            table_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Data/'
-            can_dir='处理后/处理后/'+'sample_table/Num_'+r+'/Candidate/'
-            col_type_dir='处理后/处理后/'+'sample_table/Num_'+r+'/ColumnType/'
+            table_dir='Data/'+'sample_table/Num_'+r+'/Data/'
+            can_dir='Data/'+'sample_table/Num_'+r+'/Candidate/'
+            col_type_dir='Data/'+'sample_table/Num_'+r+'/ColumnType/'
     
     os.makedirs(col_type_dir,exist_ok=True)
 
