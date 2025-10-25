@@ -305,7 +305,7 @@ def add_weighted_edge(G,qcol,c,WT,NCS,ctf,ctfq):
                 softmax_b_nei=function_for_normalize(softmax_b_nei)
                 #softmax_b_nei=np.exp(softmax_b_nei) / np.sum(np.exp(softmax_b_nei))
                 #print(softmax_b_nei1,'b1',softmax_b_nei2,softmax_b_nei_h)
-            else:#去掉与quantityType的连接，放大与mention的权重
+            else:
                 #softmax_b_nei=softmax_b_nei1+softmax_b_nei_h
                 #softmax_b_nei=function_for_normalize(softmax_b_nei)
                 #softmax_b_nei=np.exp(softmax_b_nei) / np.sum(np.exp(softmax_b_nei))
